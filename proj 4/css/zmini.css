@@ -1,0 +1,13 @@
+:root {
+    --line-heidth: 1.095;
+    --white:  #FFF;
+    --grey:  #A3A3A3;
+    --white-weigth: 500;
+    --title-weigth: 800;
+    --mobile-title-size: 48px;
+    --dekstop-title-size: 69.17px;
+    --avtive-background: linear-gradient(261deg, #FE9C1C -17.13%, #FF5E2A 86.76%);
+    --dekstop-text-weidth: 19.562px;
+    --dekstop-link-weidth: 17.725px;
+    --mobile-text-weidth: 14px;
+}

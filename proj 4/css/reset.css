@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a,
+*::before,
+*::after {
+    display: inline-block;
+}
+
+html,
+body {
+    min-width: 428px;
+    height: 100%;
+    line-height: 1;
+    font-family: "Muller";
+    background: var(--frame, linear-gradient(246deg, #1C0C00 96.42%));
+    /* background: linear-gradient(246deg, #1E0C00 4.96%, #1F0700 33.7%, #170A00 68.41%, #1E0D00 96.42%);  всратий фігмовський фон*/
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
