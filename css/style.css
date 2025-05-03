@@ -791,10 +791,12 @@ a:hover {
     .hero-video__wrapper>p {
         padding-bottom: 12px;
     }
-.hero-video__wrapper{
-    display: flex;
-    flex-direction: column-reverse;
-}
+
+    .hero-video__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     .hero__video {
         border-radius: 23px;
     }
