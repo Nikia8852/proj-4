@@ -792,7 +792,7 @@ a:hover {
         padding-bottom: 12px;
     }
 
-    .hero-video__wrapper {
+    .hero__wrapper {
         display: flex;
         flex-direction: column-reverse;
     }
