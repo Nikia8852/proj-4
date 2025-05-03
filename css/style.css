@@ -654,10 +654,12 @@ a:hover {
     fill: #FF5D29;
     position: relative;
 }
-.footer__icon:hover{
-transform: scale(1.3);
-transition: 0.5s;
+
+.footer__icon:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
 }
+
 @media (min-width: 1511px) {
     [class*="__container"] {
         width: 1252px;
@@ -789,7 +791,10 @@ transition: 0.5s;
     .hero-video__wrapper>p {
         padding-bottom: 12px;
     }
-
+.hero-video__wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+}
     .hero__video {
         border-radius: 23px;
     }

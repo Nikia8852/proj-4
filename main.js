@@ -1,45 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let lastIsLargeScreen = window.innerWidth > 1511;
-  let executed = false;
+(function waitForElementsAndInit() {
+  const content = document.querySelector(".events__content");
+  const items = document.querySelectorAll(".events__item");
 
-  function moveBtns() {
-    const wrapper = document.querySelector(".hero__wrapper");
-    const btns = document.querySelector(".hero__btns");
-    const video = document.querySelector(".hero-video__wrapper");
-    const content = document.querySelector(".events__content");
-    const items = document.querySelectorAll(".events__item");
-
-    if (!wrapper || !btns || !video || !content || items.length < 2)
-      return false;
-
-    const isLargeScreen = window.innerWidth > 1511;
-
-    if (isLargeScreen !== lastIsLargeScreen) {  
-      if (isLargeScreen) {
-        wrapper.appendChild(btns);
-        items[1].after(content);
-      } else {
-        wrapper.insertBefore(btns, video);
-      }
-      lastIsLargeScreen = isLargeScreen;
-    }
-
-    return true; // все вдалося
+  if (!content || items.length < 2) {
+    setTimeout(waitForElementsAndInit, 100);
+    return;
   }
 
-  // Спробуй 50 разів, кожні 100 мс (тобто ~5 секунд)
-  const interval = setInterval(() => {
-    if (executed) {
-      clearInterval(interval);
-      return;
+  let lastScreenState = null;
+
+  function moveElements() {
+    const isLarge = window.innerWidth > 1511;
+    if (lastScreenState === isLarge) return;
+
+    if (isLarge) {
+      items[1].after(content);
     }
 
-    const success = moveBtns();
-    if (success) {
-      executed = true;
-      clearInterval(interval);
-    }
-  }, 100);
+    lastScreenState = isLarge;
+  }
 
-  window.addEventListener("resize", moveBtns);
-});
+  moveElements();
+  window.addEventListener("resize", moveElements);
+})();
